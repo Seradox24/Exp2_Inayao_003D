@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es-cl">
-  <head>
+
+<head>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,109 +10,112 @@
     <title>Incursio Travel!</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-  </head>
-  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--api codigo-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#enviar").click(function () {
+
+                $.get("https://apis.digital.gob.cl/fl/feriados/2021",
+                    function (data) {
+
+                        $.each(data, function (i, item) {
+                            $("#fechas").append("<tr><td>" + item.nombre + "</td><td>" + item.fecha +
+                                "</td><td>" + item.tipo + "</td><td>" + item.irrenunnciable + "</td></tr>");
+                                
+
+
+                        });
+
+                    });
+            });
+        })
+    </script>
+    <style>
+        #caja {
+            margin-left: 40px;
+        }
+    </style>
+    <!--fin de script api-->
+</head>
+
+<body>
     <!-------------------------------------Navbar----------------------------------------->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a href="/" class="navbar-brand">
-                
+
                 <i class="bi bi-signpost-split h3 text-warning"></i>
-                <span class="align-middle fw-bold h3"
-                onmouseover="style.color='yellow'"
-                onmouseout="style.color='white'"
-                >Incursio Travel</span>
+                <span class="align-middle fw-bold h3" onmouseover="style.color='yellow'"
+                    onmouseout="style.color='white'">Incursio Travel</span>
                 <i class="bi bi-geo-alt-fill h3 text-danger"></i>
             </a>
             <!-- Boton para que sea responsive-->
-            <button
-                class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- end Boton para que sea responsive-->
             <!-- Menu que se colapsa-->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold h5">
-                        <li class="nav-item ">
-                            <a
-                                href="Index.html"
-                                class="nav-link active"
-                                aria-current="page"
-                                onmouseover="style.color='yellow'"
-                                onmouseout="style.color='white'"
-                                
-                            >
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold h5">
+                    <li class="nav-item ">
+                        <a href="Index.html" class="nav-link active" aria-current="page"
+                            onmouseover="style.color='yellow'" onmouseout="style.color='white'">
                             <p class="text-warning">
                                 Inició
                             </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="./pages/quienes somos.html"
-                                class="nav-link active" 
-                                onmouseover="style.color='yellow'"
-                                onmouseout="style.color='white'"                   
-                            >
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./pages/quienes somos.html" class="nav-link active" onmouseover="style.color='yellow'"
+                            onmouseout="style.color='white'">
                             Quiénes somos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="./pages/galeria.html"
-                                class="nav-link active"
-                                onmouseover="style.color='yellow'"
-                                onmouseout="style.color='white'"                    
-                            >
-                            Galería 
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="./pages/contacto.html"
-                                class="nav-link active"   
-                                onmouseover="style.color='yellow'"
-                                onmouseout="style.color='white'"                 
-                            >
-                            Contacto 
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="./pages/registro.html"
-                                class="nav-link active" 
-                                onmouseover="style.color='yellow'"
-                                onmouseout="style.color='white'"                   
-                            >
-                            Iniciar sesión 
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            <!-- end Menu que se colapsa-->    
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./pages/galeria.html" class="nav-link active" onmouseover="style.color='yellow'"
+                            onmouseout="style.color='white'">
+                            Galería
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./pages/contacto.html" class="nav-link active" onmouseover="style.color='yellow'"
+                            onmouseout="style.color='white'">
+                            Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./pages/registro.html" class="nav-link active" onmouseover="style.color='yellow'"
+                            onmouseout="style.color='white'">
+                            Iniciar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end Menu que se colapsa-->
         </div>
     </nav>
 
     <!-----------------------------------end Navbar--------------------------------------->
     <!------------------------------------carousel---------------------------------------->
     <section class="mt-5 col-12 ">
-        <div
-        id="carouselExampleIndicators" 
-        class="carousel slide carousel-fade" 
-        data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicatorss" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
-            <div class="carousel-inner"> <!--interno-->
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicatorss" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <!--interno-->
                 <div class="carousel-item active">
                     <img src="img/slide 1.jpg" class="d-block w-100 h-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
@@ -124,7 +128,8 @@
                     <img src="img/slide 2.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Turismo agrícola y aventura Yalane</h5>
-                        <p>Miñi Miñe se ubica en el límite Norte la Comuna de Huara, Provincia del Tamarugal, Región de Tarapacá.</p>
+                        <p>Miñi Miñe se ubica en el límite Norte la Comuna de Huara, Provincia del Tamarugal, Región de
+                            Tarapacá.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -142,14 +147,16 @@
                     </div>
                 </div>
             </div>
-                <button class="carousel-control-prev" type="button"             data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button"   data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-                </button>
+            </button>
         </div>
     </section>
     <!----------------------------------end carousel-------------------------------------->
@@ -158,7 +165,7 @@
         <div class="container">
             <h2 class="text-center display-4 mb-5 fw-bold">
                 <span>
-                    DESCUBRE LOS ATRACTIVOS DE NORTE  
+                    DESCUBRE LOS ATRACTIVOS DE NORTE
                 </span>
                 <i class="bi bi-geo-alt-fill text-danger"></i>
             </h2>
@@ -166,25 +173,32 @@
                 <div class="col-12 col-lg-5 ">
                     <h3>Zona norte - Iquique.</h3>
                     <hr>
-                    <p class="h5">Iquique es conocida como la “Tierra de campeones” y si visitas el norte chileno, no puedes dejar de visitar la capital de la Región de Tarapacá. Gracias a los vientos que predominan en este sector, se puede practicar parapente los 365 días del año y disfrutar las vistas de Iquique desde las alturas. Si prefieres los deportes náuticos, puedes practicar surf en la playa Cavancha y si te gusta la aventura en tierra, hacer sandboard en las dunas del cerro Dragón también se han vuelto uno de los imperdibles si estás en la ciudad.</p>
+                    <p class="h5">Iquique es conocida como la “Tierra de campeones” y si visitas el norte chileno, no
+                        puedes dejar de visitar la capital de la Región de Tarapacá. Gracias a los vientos que
+                        predominan en este sector, se puede practicar parapente los 365 días del año y disfrutar las
+                        vistas de Iquique desde las alturas. Si prefieres los deportes náuticos, puedes practicar surf
+                        en la playa Cavancha y si te gusta la aventura en tierra, hacer sandboard en las dunas del cerro
+                        Dragón también se han vuelto uno de los imperdibles si estás en la ciudad.</p>
                     <a href="https://chile.travel/donde-ir/norte-desierto-atacama/iquique"><button
-                        class="btn btn-primary mb-5 mb-lg-0 dis">
-                        <p class="h6 fw-bold ">
-                            Ver más...
-                        </p>
-                    </button></a>
+                            class="btn btn-primary mb-5 mb-lg-0 dis">
+                            <p class="h6 fw-bold ">
+                                Ver más...
+                            </p>
+                        </button></a>
                 </div>
                 <div class="col-12 col-lg-7">
                     <div class="hovereffect">
                         <img src="img/slide 6.jpg" alt="" class="img-fluid rounded">
                         <div class="overlay">
-                            <p class="py-5 m-2 ">Playa y desierto son los atractivos turísticos principales que hacen de Iquique y de la Región de Tarapacá en un destino imperdible para visitar durante tus vacaciones. </p>
+                            <p class="py-5 m-2 ">Playa y desierto son los atractivos turísticos principales que hacen de
+                                Iquique y de la Región de Tarapacá en un destino imperdible para visitar durante tus
+                                vacaciones. </p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-        </div> 
+
+        </div>
     </main>
     <!------------------------------------end Main---------------------------------------->
     <!---------------------------------Es bonito Soñar------------------------------------>
@@ -192,13 +206,13 @@
         <div class="container  ">
             <h2 class="text-center display-4 mb-5 fw-bold">
                 <span>
-                    Incursio App ya esta disponible.  
+                    Incursio App ya esta disponible.
                 </span>
                 <i class="bi bi-joystick text-danger"></i>
             </h2>
             <div class="row align-items-center mx-auto">
                 <div class="col-12 col-lg-4">
-                    <div >
+                    <div>
                         <h5 class="text-white">
                             <span class="badge bg-primary">
                                 nuevo
@@ -212,8 +226,8 @@
                             Dile adios a la guia tradicional y disfruta todos los beneficios de una guia 100% Digital
                         </p>
                         <a href="https://play.google.com/store?hl=es&gl=US" class="btn btn-primary">Descargala ya</a>
-                        
-                    </div>                   
+
+                    </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="content">
@@ -224,6 +238,44 @@
         </div>
     </section>
     <!-------------------------------------end Dream-------------------------------------->
+    <!---------------------------------api------------------------------------>
+    
+        
+
+        <div class="bg-dark text-white">
+
+        <p class="text-center  display-4 mb-5 fw-bold"> Aprovecha los feriados de este año y disfruta de unas pequeñas vacaciones por el norte de Chile </p>
+        <hr>
+        <div id="caja">
+            <h3>Último feriado de la búsqueda es :</h3>
+                <p id="feriado"></p>
+                <br>
+            
+            
+            <br><br>
+        
+       
+            <button type="button" id="enviar">Cargando datos</button>
+        </div>
+        <br><br>
+    
+        <table class="table text-white "  id="fechas">
+            <thead >
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Irrenunciable</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+    
+        </table>
+
+    </div>
+    
     <!---------------------------------------footer--------------------------------------->
     <footer class=" container-fluid bg-dark py-5 text-center text-white ">
         <div class="border-3 border border-warning py-5  ">
@@ -233,7 +285,8 @@
             <a href="https://www.instagram.com"><i class="bi bi-instagram text-warning h1 m-3"></i></a>
             <a href="https://twitter.com/?lang=es"><i class="bi bi-twitter text-primary h1 m-3"></i></a>
             <p>
-            Matias Inayao Poveda, @Copyrigth Derechos reservados. <a href="https://youtu.be/C8FQ4wQXyaE">www.bronza-power.cl</a>
+                Matias Inayao Poveda, @Copyrigth Derechos reservados. <a
+                    href="https://youtu.be/C8FQ4wQXyaE">www.bronza-power.cl</a>
             </p>
         </div>
     </footer>
@@ -241,7 +294,10 @@
     <!-------------------------------------end footer-------------------------------------->
 
     <!-- ---------------Option 1: Bootstrap Bundle with Popper------------------ -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-  </body>
+    <script src="./js/feriados.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
