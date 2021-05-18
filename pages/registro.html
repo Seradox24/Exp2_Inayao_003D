@@ -1,0 +1,237 @@
+<doctype html>
+<html lang="es-cl">
+ 
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Incursio Travel!</title>
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-dark">
+    <!-------------------------------------Navbar----------------------------------------->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                
+                <i class="bi bi-signpost-split h3 text-warning"></i>
+                <span class="align-middle fw-bold h3"
+                onmouseover="style.color='yellow'"
+                onmouseout="style.color='white'"
+                >Incursio Travel</span>
+                <i class="bi bi-geo-alt-fill h3 text-danger"></i>
+            </a>
+            <!-- Boton para que sea responsive-->
+            <button
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- end Boton para que sea responsive-->
+            <!-- Menu que se colapsa-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold h5">
+                        <li class="nav-item ">
+                            <a
+                                href="../Index.html"
+                                class="nav-link active"
+                                aria-current="page"
+                                onmouseover="style.color='yellow'"
+                                onmouseout="style.color='white'" 
+                            >
+                            Inició
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                href="quienes somos.html"
+                                class="nav-link active"  
+                                onmouseover="style.color='yellow'"
+                                onmouseout="style.color='white'"                   
+                            >
+                                Quiénes somos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                href="galeria.html"
+                                class="nav-link active"
+                                onmouseover="style.color='yellow'"
+                                onmouseout="style.color='white'"                     
+                            >
+                            Galería 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                href="contacto.html"
+                                class="nav-link active"   
+                                onmouseover="style.color='yellow'"
+                                onmouseout="style.color='white'"                 
+                            >
+                            Contacto 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                href="registro.html"
+                                class="nav-link active" 
+                                onmouseover="style.color='yellow'"
+                                onmouseout="style.color='white'"                   
+                            >
+                            <p class="text-warning">
+
+                                Iniciar sesión 
+                            </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            <!-- end Menu que se colapsa-->    
+        </div>
+    </nav>
+
+    <!-----------------------------------end Navbar--------------------------------------->
+<section class="row g-0 ">
+    <div class="col-lg-7 d-none d-lg-block py-lg-5 " >
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item img-1 min-vh-100 active">
+               
+              </div>
+              <div class="carousel-item img-2 min-vh-100 " >
+               
+              </div>
+              <div class="carousel-item img-3 min-vh-100">
+                
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+    </div>
+    <div class="col-lg-5">
+        <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 mt-5  ">
+       
+                
+        </div>
+        
+        <div class="px-lg-5 py-lg-1 ">
+            <h1 class="fw-bold mb-4">Registro de usuario</h1>
+            <form id="formularior" name="datosr" method="POST" action="" class="needs-validation" novalidate>
+                <div class="mb-3 fw-bold h4" id="grupo__usuario"  >
+                    <label for="usuario" class="form-label ">usuario</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="prevnumber">@ </span>
+                    <input 
+                    name="rusuario"
+                    id="usuario"
+                    type="text"
+                    class="form-control"
+                    placeholder="Ingresa aquí tu Nombre de usuario"
+                    required
+                    >
+                    <div class="invalid-feedback"></div>            
+                    </div>
+
+                </div>
+                <div class="mb-3 fw-bold h4" id="grupo__nombre" >
+                    <label for="rname" class="form-label">nombre y apellidos</label>
+                    <input 
+                    name="rnombre"
+                    id="rname"
+                    type="text"
+                    class="form-control"
+                    placeholder="Ingresa aquí tu nombre y apellidos"
+                    onchange="CambiarMayusculas()" 
+                    required
+                    >
+                    <div class="invalid-feedback"></div>
+
+                <div class="mb-3 fw-bold h4" id="grupo__email" >
+                    <label for="remail" class="form-label">correo electrónico</label>
+                    <input 
+                    name="rcorreo"
+                    id="remail"
+                    type="email"
+                    class="form-control"
+                    placeholder="Ingresa aquí tu email"
+                    required
+                    >
+                    <div class="invalid-feedback"></div>
+
+                <div class="mb-3" id="grupo__pass" >
+                    <label for="rpass" class="form-label">Contraseña</label>
+                    <input 
+                    name="rpassword"
+                    id="rpass"
+                    type="password"
+                    class="form-control"
+                    placeholder="Ingresa aquí tu Contraseña"
+                    required
+                    >
+                    <div class="invalid-feedback"></div>
+
+                <div class="mb-3" id="grupo__fono" >
+                    <label for="rfono" class="form-label">Tu numero de telefono</label>
+                    <input 
+                    name="nfono"
+                    id="rfono"
+                    type="tel"
+                    class="form-control"
+                    placeholder="Ingresa aquí tu email"
+                    required
+                    >
+                    <div class="invalid-feedback"></div>
+
+                    <p class="my-3 text-center h4 text-success d-none" id="formulario__msj-exito">Registro Completado</p>
+                <input class="btn  btn-secondary w-100 mt-5 " type="reset" value="limpiar"> 
+                <button class="btn  btn-primary w-100 mt-3" type="submit" id="boton">
+                    Enviar
+                </button>
+                <div class=" text-center">
+                    <a href="../Index.html" class="  text-center text-decoration-none  
+                    " onmouseover="style.color='yellow'"
+                    onmouseout="style.color='white'"  >Volver a Inició</a>
+                </div>
+
+
+
+    </div>
+    
+</div>
+
+</section>
+    
+    <!-- ---------------Option 1: Bootstrap Bundle with Popper------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <script src="../js/registro.js"></script>
+</body>
+
+</html>

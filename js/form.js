@@ -140,3 +140,8 @@ const campovalido=(campo)=>{
     },2000)
 }
 
+
+function CambiarMayusculas(){
+    var a = document.getElementById('name');
+    a.value = a.value.toUpperCase();
+}
